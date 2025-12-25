@@ -1,5 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
+
+interface FloatingChair {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  duration: number;
+  delay: number;
+}
 
 const galleryItems = [
   {
@@ -42,9 +51,43 @@ const galleryItems = [
 
 const Index = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [chairs, setChairs] = useState<FloatingChair[]>([]);
+
+  useEffect(() => {
+    const generateChairs = () => {
+      const newChairs: FloatingChair[] = [];
+      for (let i = 0; i < 15; i++) {
+        newChairs.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: 30 + Math.random() * 40,
+          duration: 15 + Math.random() * 20,
+          delay: Math.random() * 5
+        });
+      }
+      setChairs(newChairs);
+    };
+    generateChairs();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background px-6 py-16 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-background px-6 py-16 md:px-12 lg:px-24 relative overflow-hidden">
+      {chairs.map((chair) => (
+        <div
+          key={chair.id}
+          className="fixed pointer-events-none z-10 opacity-40"
+          style={{
+            left: `${chair.x}%`,
+            top: `${chair.y}%`,
+            fontSize: `${chair.size}px`,
+            animation: `float ${chair.duration}s ease-in-out infinite`,
+            animationDelay: `${chair.delay}s`
+          }}
+        >
+          🪑
+        </div>
+      ))}
       <header className="mb-20 text-center animate-fade-in">
         <h1 className="text-6xl md:text-8xl font-light text-foreground mb-6 tracking-tight">
           Я КУКОЛД
