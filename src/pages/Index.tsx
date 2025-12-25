@@ -4,39 +4,39 @@ import { Card } from '@/components/ui/card';
 const galleryItems = [
   {
     id: 1,
-    title: 'Рассвет',
+    title: 'Я КУКОЛД',
     color: 'bg-[#F2FCE2]',
-    description: 'Первые лучи нового дня'
+    description: 'Я КУКОЛД'
   },
   {
     id: 2,
-    title: 'Тепло',
+    title: 'Я КУКОЛД',
     color: 'bg-[#FEF7CD]',
-    description: 'Солнечный свет в капле росы'
+    description: 'Я КУКОЛД'
   },
   {
     id: 3,
-    title: 'Закат',
+    title: 'Я КУКОЛД',
     color: 'bg-[#FEC6A1]',
-    description: 'Мягкое прощание дня'
+    description: 'Я КУКОЛД'
   },
   {
     id: 4,
-    title: 'Сумерки',
+    title: 'Я КУКОЛД',
     color: 'bg-[#E5DEFF]',
-    description: 'Переход в ночь'
+    description: 'Я КУКОЛД'
   },
   {
     id: 5,
-    title: 'Нежность',
+    title: 'Я КУКОЛД',
     color: 'bg-[#FFDEE2]',
-    description: 'Легкое касание'
+    description: 'Я КУКОЛД'
   },
   {
     id: 6,
-    title: 'Персик',
+    title: 'Я КУКОЛД',
     color: 'bg-[#FDE1D3]',
-    description: 'Мягкость бархата'
+    description: 'Я КУКОЛД'
   }
 ];
 
@@ -47,10 +47,10 @@ const Index = () => {
     <div className="min-h-screen bg-background px-6 py-16 md:px-12 lg:px-24">
       <header className="mb-20 text-center animate-fade-in">
         <h1 className="text-6xl md:text-8xl font-light text-foreground mb-6 tracking-tight">
-          Галерея
+          Я КУКОЛД
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
-          Органические формы и естественные цвета
+          Я КУКОЛД
         </p>
       </header>
 
@@ -89,7 +89,7 @@ const Index = () => {
 
       <footer className="mt-32 text-center animate-fade-in" style={{ animationDelay: '800ms' }}>
         <p className="text-muted-foreground text-lg font-light">
-          Место для самовыражения и творчества
+          Я КУКОЛД
         </p>
       </footer>
     </div>
