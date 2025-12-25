@@ -10,6 +10,16 @@ interface FloatingChair {
   delay: number;
 }
 
+interface FloatingText {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  duration: number;
+  delay: number;
+  rotation: number;
+}
+
 const galleryItems = [
   {
     id: 1,
@@ -52,6 +62,7 @@ const galleryItems = [
 const Index = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [chairs, setChairs] = useState<FloatingChair[]>([]);
+  const [texts, setTexts] = useState<FloatingText[]>([]);
 
   useEffect(() => {
     const generateChairs = () => {
@@ -69,6 +80,23 @@ const Index = () => {
       setChairs(newChairs);
     };
     generateChairs();
+    
+    const generateTexts = () => {
+      const newTexts: FloatingText[] = [];
+      for (let i = 0; i < 50; i++) {
+        newTexts.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: 20 + Math.random() * 50,
+          duration: 10 + Math.random() * 15,
+          delay: Math.random() * 10,
+          rotation: Math.random() * 360
+        });
+      }
+      setTexts(newTexts);
+    };
+    generateTexts();
   }, []);
 
   return (
@@ -88,19 +116,41 @@ const Index = () => {
           🪑
         </div>
       ))}
-      <header className="mb-20 text-center animate-fade-in">
+      {texts.map((text) => (
+        <div
+          key={`text-${text.id}`}
+          className="fixed pointer-events-none z-5 opacity-20 font-bold whitespace-nowrap"
+          style={{
+            left: `${text.x}%`,
+            top: `${text.y}%`,
+            fontSize: `${text.size}px`,
+            animation: `float ${text.duration}s ease-in-out infinite`,
+            animationDelay: `${text.delay}s`,
+            transform: `rotate(${text.rotation}deg)`,
+            color: 'hsl(var(--foreground))'
+          }}
+        >
+          Я КУКОЛД
+        </div>
+      ))}
+      <header className="mb-20 text-center animate-fade-in relative z-20">
         <h1 className="text-6xl md:text-8xl font-light text-foreground mb-3 tracking-tight">
           Я КУКОЛД
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground/70 font-light mb-6">
+        <a 
+          href="https://t.me/bog338" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-lg md:text-xl text-muted-foreground/70 font-light mb-6 inline-block hover:text-foreground transition-colors duration-300 underline"
+        >
           Telegram @bog338
-        </p>
+        </a>
         <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
           Я КУКОЛД
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-20">
         {galleryItems.map((item, index) => (
           <Card
             key={item.id}
@@ -135,7 +185,7 @@ const Index = () => {
         ))}
       </div>
 
-      <footer className="mt-32 text-center animate-fade-in" style={{ animationDelay: '800ms' }}>
+      <footer className="mt-32 text-center animate-fade-in relative z-20" style={{ animationDelay: '800ms' }}>
         <p className="text-muted-foreground text-lg font-light">
           Я КУКОЛД
         </p>
