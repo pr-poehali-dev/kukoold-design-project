@@ -56,13 +56,13 @@ const Index = () => {
   useEffect(() => {
     const generateChairs = () => {
       const newChairs: FloatingChair[] = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 30; i++) {
         newChairs.push({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
           size: 30 + Math.random() * 40,
-          duration: 15 + Math.random() * 20,
+          duration: 8 + Math.random() * 12,
           delay: Math.random() * 5
         });
       }
@@ -89,9 +89,12 @@ const Index = () => {
         </div>
       ))}
       <header className="mb-20 text-center animate-fade-in">
-        <h1 className="text-6xl md:text-8xl font-light text-foreground mb-6 tracking-tight">
+        <h1 className="text-6xl md:text-8xl font-light text-foreground mb-3 tracking-tight">
           Я КУКОЛД
         </h1>
+        <p className="text-lg md:text-xl text-muted-foreground/70 font-light mb-6">
+          Telegram @bog338
+        </p>
         <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
           Я КУКОЛД
         </p>

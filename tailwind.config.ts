@@ -94,10 +94,12 @@ export default {
 					'100%': { transform: 'scale(1)', opacity: '1' }
 				},
 				'float': {
-					'0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-					'25%': { transform: 'translate(30px, -50px) rotate(10deg)' },
-					'50%': { transform: 'translate(-20px, -100px) rotate(-10deg)' },
-					'75%': { transform: 'translate(40px, -70px) rotate(15deg)' }
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'20%': { transform: 'translate(100px, -80px) rotate(45deg)' },
+					'40%': { transform: 'translate(-80px, -160px) rotate(-30deg)' },
+					'60%': { transform: 'translate(120px, -100px) rotate(60deg)' },
+					'80%': { transform: 'translate(-60px, -200px) rotate(-45deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(360deg)' }
 				}
 			},
 			animation: {
