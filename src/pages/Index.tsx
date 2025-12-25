@@ -5,37 +5,37 @@ const galleryItems = [
   {
     id: 1,
     title: 'Я КУКОЛД',
-    color: 'bg-[#F2FCE2]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/bf035e32-2535-439b-a38a-ad4f0219400d.jpg',
     description: 'Я КУКОЛД'
   },
   {
     id: 2,
     title: 'Я КУКОЛД',
-    color: 'bg-[#FEF7CD]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/6e46a2aa-0650-492d-8442-a96a611d22b8.jpg',
     description: 'Я КУКОЛД'
   },
   {
     id: 3,
     title: 'Я КУКОЛД',
-    color: 'bg-[#FEC6A1]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/616ae9dc-808d-46f5-9d4d-568db8968a08.jpg',
     description: 'Я КУКОЛД'
   },
   {
     id: 4,
     title: 'Я КУКОЛД',
-    color: 'bg-[#E5DEFF]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/842c0e47-87b6-46bb-80fc-36bc403d56e1.jpg',
     description: 'Я КУКОЛД'
   },
   {
     id: 5,
     title: 'Я КУКОЛД',
-    color: 'bg-[#FFDEE2]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/ff65f1fd-1212-41de-aa2e-1591a8f16029.jpg',
     description: 'Я КУКОЛД'
   },
   {
     id: 6,
     title: 'Я КУКОЛД',
-    color: 'bg-[#FDE1D3]',
+    image: 'https://cdn.poehali.dev/projects/c4900e02-459f-42c7-820a-a8fecce81328/files/b3ef297d-1c08-4711-97dc-be444cbda6f4.jpg',
     description: 'Я КУКОЛД'
   }
 ];
@@ -64,8 +64,10 @@ const Index = () => {
             onMouseLeave={() => setHoveredId(null)}
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <div
-                className={`${item.color} w-full h-full transition-all duration-700 ease-out ${
+              <img
+                src={item.image}
+                alt={item.title}
+                className={`w-full h-full object-cover transition-all duration-700 ease-out ${
                   hoveredId === item.id ? 'scale-110' : 'scale-100'
                 }`}
               />
